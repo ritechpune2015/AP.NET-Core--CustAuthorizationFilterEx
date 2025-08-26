@@ -1,0 +1,75 @@
+﻿@model RegistrationVM
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title> Regisration</title>
+    </head>
+    <body>
+        <h2> New User Sign up</h2>
+        <form asp-action="SignUp" method="post">
+            <div asp-validation-summary="ModelOnly"> 
+            </div>
+            <div>
+                <label asp-for="FirstName"></label>
+                <div>
+                    <input asp-for="FirstName" />
+                    <span asp-validation-for="FirstName"></span>
+                </div>
+            </div>
+
+        <div>
+            <label asp-for="LastName"></label>
+            <div>
+                <input asp-for="LastName" />
+                <span asp-validation-for="LastName"></span>
+            </div>
+        </div>
+
+        <div>
+                <label asp-for="Address"></label>
+                <div>
+                    <input asp-for="Address" />
+                    <span asp-validation-for="Address"></span>
+                </div>
+            </div>
+
+            <div>
+                <label asp-for="MobileNo"></label>
+                <div>
+                    <input asp-for="MobileNo" />
+                    <span asp-validation-for="MobileNo"></span>
+                </div>
+            </div>
+
+        <div>
+            <label asp-for="EmailID"></label>
+            <div>
+                <input asp-for="EmailID" />
+                <span asp-validation-for="EmailID"></span>
+            </div>
+        </div>
+
+        <div>
+            <label asp-for="Password"></label>
+            <div>
+                <input asp-for="Password" />
+                <span asp-validation-for="Password"></span>
+            </div>
+        </div>
+
+         <div>
+            <label asp-for="CofirmPassword"></label>
+            <div>
+                <input asp-for="CofirmPassword" />
+                <span asp-validation-for="CofirmPassword"></span>
+            </div>
+        </div>
+        
+        <div>
+            <input type="submit" value="Sign Up" />
+            <a asp-action="SignIn">Back to Login</a>
+        </div>
+
+        </form>
+    </body>
+    </html>
