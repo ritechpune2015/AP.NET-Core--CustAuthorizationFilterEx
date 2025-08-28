@@ -1,9 +1,11 @@
-﻿using CustAuthorizationFilterEx.Repositories;
+﻿using CustAuthorizationFilterEx.CustFilters;
+using CustAuthorizationFilterEx.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CustAuthorizationFilterEx.Areas.UserArea.Controllers
 {
 	[Area("UserArea")]
+	[UserAuth]
 	public class UserHomeController : Controller
 	{
 		IProduct repo;

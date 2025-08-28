@@ -26,7 +26,13 @@ namespace CustAuthorizationFilterEx.Controllers
 				var res = this.repo.Login(rec);
 				if (res.IsSuccess)
 				{
-					TempData["UserName"] = res.FullName;
+					//TempData["UserName"] = res.FullName;
+
+					HttpContext.Session.SetString("UserID",res.UserID.ToString());
+
+					HttpContext.Session.SetString("UserName", res.FullName);
+
+
 					return RedirectToAction("Index", "UserHome", new { area = "UserArea" });
 				}
 				else
@@ -61,5 +67,12 @@ namespace CustAuthorizationFilterEx.Controllers
 			return View(rec);
 		}
 
+
+		[HttpGet]
+		public IActionResult SignOut()
+		{
+			HttpContext.Session.Clear();
+			return RedirectToAction("SignIn");
+		}
 	}
 }
